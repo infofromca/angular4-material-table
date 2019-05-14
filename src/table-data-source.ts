@@ -1,5 +1,4 @@
-import { DataSource } from '@angular/cdk/collections';
-
+import { MatTableDataSource } from "@angular/material";
 import { BehaviorSubject, Subject, Observable } from 'rxjs';
 
 import { TableElementFactory } from './table-element.factory';
@@ -7,7 +6,7 @@ import { ValidatorService } from './validator.service';
 import { TableElement } from './table-element';
 import { DefaultValidatorService } from './default-validator.service';
 
-export class TableDataSource<T> extends DataSource<TableElement<T>> {
+export class TableDataSource<T> extends MatTableDataSource<TableElement<T>> {
 
   protected rowsSubject: BehaviorSubject<TableElement<T>[]>;
   datasourceSubject: Subject<T[]>;
@@ -308,8 +307,8 @@ export class TableDataSource<T> extends DataSource<TableElement<T>> {
 
   /** Connect function called by the table to retrieve one stream containing
    *  the data to render. */
-  connect(): Observable<TableElement<T>[]> {
-    return this.rowsSubject.asObservable();
+  connect(): BehaviorSubject<TableElement<T>[]> {
+    return this.rowsSubject;
   }
 
   disconnect() { }

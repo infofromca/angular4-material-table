@@ -1,41 +1,25 @@
-# Angular4 material table (angular4+)
+# Angular7 material table
 
-This project extends `@angular/cdk` data-table, also used in `@angular/material` table.
+This project extends `@angular/material` table based on [angular4-material-table](https://www.npmjs.com/package/angular4-material-table).Thanks to `Ignacio Rossi`.
 
-It extends `@angular/cdk/collections` DataSource in order to include a row structure, allowing row creation, inline row edition, deletion and validation.
+It extends the MatTableDataSource in order to include a row structure, allowing row creation, inline row edition, deletion and validation.
 
 Supported angular versions: 
-- Angular 4 (v0.1.8)
-- Angular 5 (v0.2.0)
-- Angular 6 (v0.6.0)
-- Angular 7 (v0.7.0)
+- Angular 7
 
-![angular4-material-table](https://i.imgur.com/ufilXlv.gif)
 
 ## Installation
 
 To install the package run:
 
-`npm install angular4-material-table`
-
-## Example
-
-Example of using `angular4-material-table`:
-
-![angular4-material-table](https://i.imgur.com/vncajJG.png)
-
-![Other example](https://i.imgur.com/5ed814s.png)
+`npm install angular7-material-table`
 
 
 ## Use
 
-### Initial steps
-
-To use this table, first of all you must check [how use angular `@angular/cdk` data-table](https://material.angular.io/guide/cdk-table).
-
 ### Useful data and methods
 
-Using this extension, you can set CDK data-table `datasource` with an instance of `TableDataSource`.
+Using this extension, you can set  meterial table `datasource` with an instance of `TableDataSource`.
 
 Using `TableDataSource` allows you to have some row related methods and data to implement add/edit/remove elements:
 ```typescript
@@ -74,18 +58,12 @@ class TableDataSource<T> {
 }
 ```
 
-### Angular4 material table example
 
-Angular 4 material table use example:
-![Example of angular4-material-table use](https://i.imgur.com/ath56FU.png)
-
-[See this package in action](https://stackblitz.com/edit/angular-tj9f6y)
 
 #### Optional libraries
-Optional libraries used in the example:
-```
-"@angular/material": "2.0.0-beta.12",
-"@angular/forms": "4.4.4", // <- For inline validation
+Optional libraries used in the example:``
+
+"@angular/forms": "~7.2.0", // <- For inline validation
 "font-awesome": "4.7.0"
 ```
 
